@@ -13,6 +13,16 @@ public class LinkedLists<T> {
         }
         tail = newNode;
     }
+    public void push(T data) {
+        Node<T> newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+    }
 
     public void show() {
         if (head == null) {
