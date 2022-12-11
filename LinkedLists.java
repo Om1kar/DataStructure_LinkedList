@@ -1,8 +1,9 @@
 package LinkedList;
 
-public class LinkedList<T> {
+public class LinkedLists<T> {
     Node<T> head;
     Node<T> tail;
+
     public void add(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
@@ -12,13 +13,14 @@ public class LinkedList<T> {
         }
         tail = newNode;
     }
-    public void show(){
-        if (head==null) {
+
+    public void show() {
+        if (head == null) {
             System.out.println("Linked List is Empty");
-        }   else {
+        } else {
             Node<T> temp = head;
-            while (temp!=null){
-                System.out.print(temp.data+" ");
+            while (temp != null) {
+                System.out.print(temp.data + " ");
                 temp = temp.next;
             }
             System.out.println();
