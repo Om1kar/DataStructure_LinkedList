@@ -2,7 +2,7 @@ package LinkedList;
 
 public class LinkedListMain {
     /*
-   UC-6> Ability to delete last element
+   UC-7> Ability to search node from linked lists
      */
     public static void main(String[] args) {
         LinkedLists<Integer> list = new LinkedLists<>();
@@ -10,10 +10,11 @@ public class LinkedListMain {
         list.add(56);
         list.add(30);
         list.add(70);
-
-        list.popBack();
         list.show();
 
+        list.searchNode(70);
+        list.searchNode(30);
+        list.searchNode(40);
 
     }
 }
