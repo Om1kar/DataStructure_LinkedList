@@ -36,6 +36,34 @@ public class LinkedLists<T> {
         }
 
     }
+    public void popDeleteData(int position) {
+        if (head == null)
+            return;
+
+        Node<T> temp = head;
+        if (position == 0) {
+            head = temp.next;
+            return;
+        }
+        for (int i = 0; temp != null && i < position - 1; i++)
+            temp = temp.next;
+        if (temp == null || temp.next == null)
+            return;
+
+        Node<T> next = temp.next.next;
+
+        temp.next = next;
+    }
+
+    public int size() {
+        Node<T> temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
     public void show() {
         if (head == null) {
             System.out.println("Linked List is Empty");
