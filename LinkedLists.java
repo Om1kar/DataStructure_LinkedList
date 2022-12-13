@@ -14,29 +14,25 @@ public class LinkedLists<T> {
         tail = newNode;
     }
 
-    public void searchNode(T data) {
-        Node<T> current = head;
-        int i = 1;
-        boolean flag = false;
+    public void insertDataAtMid(T data) {
+        if (head == null)
+            head = new Node<>(data);
+        else {
+            Node<T> newNode = new Node<>(data);
+            Node<T> temp = head;
+            int length = 0;
 
-        if (head == null) {
-            System.out.println("List is empty");
-        } else {
-            while (current != null) {
-                if (current.data == data) {
-                    flag = true;
-                    break;
-                }
-                i++;
-                current = current.next;
+            while (temp != null) {
+                length++;
+                temp = temp.next;
             }
+            int count = ((length % 2) == 0) ? (length / 2) : (length + 1) / 2;
+            temp = head;
 
-        }
-        if (flag) {
-            System.out.println("The Node with value "  + data +  " is present in the linked lists at the position = " + i);
-
-        } else {
-            System.out.println("Node with value "+data+" is not present in the linked lists");
+            while (count-- > 1)
+                temp = temp.next;
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
 
     }
