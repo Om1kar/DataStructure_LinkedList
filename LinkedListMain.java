@@ -2,7 +2,7 @@ package LinkedList;
 
 public class LinkedListMain {
     /*
-   UC4-> Ability to delete first element in LinkedList from sequence 56 -> 30 -> 70
+   UC-6> Ability to delete last element
      */
     public static void main(String[] args) {
         LinkedLists<Integer> list = new LinkedLists<>();
@@ -11,7 +11,7 @@ public class LinkedListMain {
         list.add(30);
         list.add(70);
 
-        list.pop();
+        list.popBack();
         list.show();
 
 
